@@ -1,0 +1,7 @@
+.background-container {
+  position: relative;
+  height: 100vh;
+  background-image: url('../public/Tesla1.jpeg');
+  background-position: center center;
+  background-size: cover;
+}
