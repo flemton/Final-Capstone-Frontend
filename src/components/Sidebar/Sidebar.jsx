@@ -9,7 +9,7 @@ const Sidebar = () => (
     <div className="d-flex flex-column justify-content-between align-content-center vh-100 py-4 bg-white">
       <div className="d-flex flex-column justify-content-between align-items-center gap-5">
         <Logo />
-        <ul className="list-unstyled text-center">
+        <ul className="list-unstyled text-center px-4">
           <li>RESERVE MODEL</li>
           <li>MY RESERVATIONS</li>
           <li>ADD CARS</li>
