@@ -7,6 +7,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" />
+        <Route path="/addcar" />
+        <Route path="/user_reservations" />
+        <Route path="/reserve" />
       </Routes>
     </Router>
   );
