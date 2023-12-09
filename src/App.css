@@ -9,3 +9,24 @@
 .tiny-font {
   font-size: 0.8rem;
 }
+
+.sidebar-ul li {
+  list-style-type: none;
+  padding: 1rem 2.5rem 1rem 0.5rem ;
+  cursor: pointer;
+  text-align: start;
+}
+
+.sidebar-ul li:hover {
+  background-color: #e5e5e5;
+}
+
+.sidebar-ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar-ul button {
+  border: none;
+  background-color: transparent;
+}
