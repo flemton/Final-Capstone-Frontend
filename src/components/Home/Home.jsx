@@ -1,12 +1,17 @@
 import React from 'react';
 import Sidebar from '../Sidebar/Sidebar';
+import CarDetails from '../CarDetails/CarDetails';
 
 const Home = () => (
-  <div className="background-container container-fluid">
-    <div className="row">
-      <div className="col-3 col-3-md bg-white d-flex flex-column justify-content-between rigth-border side-hide">
+  <div className="d-flex justify-content-between align-items-center background-container vw-100">
+    <div>
+      <div style={{ width: 'fit-content' }}>
         <Sidebar />
       </div>
+    </div>
+
+    <div className="mx-3">
+      <CarDetails />
     </div>
   </div>
 );
