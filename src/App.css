@@ -30,11 +30,3 @@
   border: none;
   background-color: transparent;
 }
-
-.auth-box{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
