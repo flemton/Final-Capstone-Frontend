@@ -48,11 +48,6 @@
   text-align: start;
 }
 
-.sidebar-menu-ul a:hover,
-.sidebar-menu-ul button:hover {
-  background-color: #e5e5e5;
-}
-
 .sidebar-menu-ul li a {
   text-decoration: none;
   color: black;
@@ -61,6 +56,11 @@
 .sidebar-menu-ul button {
   border: none;
   background-color: transparent;
+}
+
+.sidebar-menu-ul a:hover,
+.sidebar-menu-ul button:hover {
+  background-color: #e5e5e5;
 }
 
 .active {
@@ -75,9 +75,9 @@
 
 .car-model {
   position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .show {
