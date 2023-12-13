@@ -7,10 +7,10 @@ import Footer from './Footer';
 
 const Sidebar = () => (
   <>
-    <div className="d-flex flex-column justify-content-between align-content-center vh-100 py-4 bg-white">
+    <div className="sidebar d-flex flex-column justify-content-between align-content-center vh-100 py-4 bg-white">
       <div className="d-flex flex-column justify-content-between align-items-center gap-5">
         <Logo />
-        <ul className="sidebar-ul text-center">
+        <ul className="sidebar-ul text-center align-self-end">
           <li>
             <Link to="/reserve">RESERVE MODEL </Link>
           </li>

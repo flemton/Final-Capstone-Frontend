@@ -5,9 +5,7 @@ import CarDetails from '../CarDetails/CarDetails';
 const Home = () => (
   <div className="d-flex justify-content-between align-items-center background-container vw-100">
     <div>
-      <div>
-        <Sidebar />
-      </div>
+      <Sidebar />
     </div>
 
     <div className="mx-3">
