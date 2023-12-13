@@ -1,6 +1,7 @@
 .background-container {
   position: relative;
   height: 100vh;
+  min-height: 450px;
   background-image: url('../public/Tesla1.jpeg');
   background-position: center center;
   background-size: cover;
@@ -24,6 +25,7 @@
 
 .sidebar-menu {
   height: 100vh;
+  min-height: 450px;
   width: 15rem;
   background-color: #f5f5f5;
   box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
