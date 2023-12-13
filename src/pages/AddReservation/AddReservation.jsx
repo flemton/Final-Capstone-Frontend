@@ -41,7 +41,7 @@ const AddReservation = () => {
                     </p>
                   </div>
                   <form className="needs-validation" noValidate onSubmit={handleReservation}>
-                    <div>
+                    <div className="my-2 text-center">
                       <label htmlFor="start_time">
                         Start Time:
                         <input
@@ -53,7 +53,7 @@ const AddReservation = () => {
                         />
                       </label>
                     </div>
-                    <div className="my-1">
+                    <div className="my-2 text-center">
                       <label htmlFor="end_time">
                         Final Time:
                         <input
@@ -65,7 +65,7 @@ const AddReservation = () => {
                         />
                       </label>
                     </div>
-                    <div className="my-1">
+                    <div className="my-2 text-center">
                       <label htmlFor="city">
                         Pick a city:
                         <input
@@ -77,7 +77,7 @@ const AddReservation = () => {
                         />
                       </label>
                     </div>
-                    <div className="text-center">
+                    <div className="my-2 text-center">
                       <button className="btn btn-success" type="submit">Reserve</button>
                     </div>
                   </form>
