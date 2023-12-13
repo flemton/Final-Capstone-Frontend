@@ -3,7 +3,7 @@ import colorRosetta from './color-rosetta.png';
 
 const CarDetails = () => (
   <>
-    <div className="container-fluid bg-white rounded-3 p-3 shadow-4-strong">
+    <div className="car-details container-fluid bg-white rounded-3 p-3 shadow-4-strong">
       <div className="text-end mt-2">
         <h2 className="m-0">Tesla model X</h2>
         <p className="tiny-font">£0.00 deposit upon any Car</p>

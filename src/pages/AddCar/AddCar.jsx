@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 const AddCar = () => {
   const navigate = useNavigate();
