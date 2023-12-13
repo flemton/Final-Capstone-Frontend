@@ -69,6 +69,17 @@
   font-weight: bold;
 }
 
+.burger-menu-header-model {
+  min-height: 500px;
+}
+
+.car-model {
+  position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .show {
   display: flex !important;
 }
@@ -99,6 +110,17 @@
     padding: 1rem 0.5rem 1rem 2.5rem;
     cursor: pointer;
     text-align: start;
+  }
+
+  .burger-menu-header-model {
+    height: 50vh;
+    min-height: 200px;
+    max-height: 300px;
+  }
+
+  .car-model {
+    width: 100%;
+    transform: translate(-50%, -50%);
   }
 
   .car-details {
