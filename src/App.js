@@ -5,6 +5,7 @@ import ReservationList from './pages/ReservationsList/ReservationList';
 import './App.css';
 import Login from './components/Session/Login';
 import Register from './components/Session/Register';
+import AddReservation from './pages/AddReservation/AddReservation';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/addcar" element={<AddCar />} />
         <Route path="/user_reservations" element={<ReservationList />} />
-        <Route path="/reserve" />
+        <Route path="/reserve" element={<AddReservation />} />
       </Routes>
     </Router>
   );
