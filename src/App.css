@@ -17,6 +17,12 @@
   box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
 }
 
+.sidebar-ul {
+  width: 85%;
+  padding: 0;
+  margin: 0;
+}
+
 .sidebar-ul li {
   list-style-type: none;
   padding: 1rem 2.5rem 1rem 0.5rem;
@@ -39,7 +45,15 @@
 }
 
 .active {
-  color: white !important;
-  background-color: black !important;
+  width: 85%;
+  background-color: #e5e5e5 !important;
   font-weight: bold;
+}
+
+.show {
+  display: flex !important
+}
+
+.hide {
+  display: none !important
 }
