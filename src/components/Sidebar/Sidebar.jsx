@@ -18,33 +18,21 @@ const Sidebar = () => {
         <div className={`sidebar-menu d-flex flex-column justify-content-between align-content-center py-4 bg-white ${sidebarVisible ? 'show' : 'hide'}`}>
           <div className="d-flex flex-column justify-content-between align-items-center gap-5">
             <Logo />
-            <ul className="sidebar-menu-ul text-center align-self-end">
-              <li>
-                <NavLink to="/" className="sidebar-menu-navlink" activeClassName="active">
-                  HOME
-                  {' '}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/reserve" activeClassName="active">
-                  RESERVE MODEL
-                  {' '}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/user_reservations" activeClassName="active">
-                  MY RESERVATIONS
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/addcar" activeClassName="active">
-                  ADD CARS
-                </NavLink>
-              </li>
-              <li>
-                <button type="button">DELETE CAR</button>
-              </li>
-            </ul>
+            <div className="sidebar-menu-ul d-flex flex-column align-self-end">
+              <NavLink to="/" className="sidebar-menu-navlink" activeClassName="active">
+                HOME
+              </NavLink>
+              <NavLink to="/reserve" activeClassName="active">
+                RESERVE MODEL
+              </NavLink>
+              <NavLink to="/user_reservations" activeClassName="active">
+                MY RESERVATIONS
+              </NavLink>
+              <NavLink to="/addcar" activeClassName="active">
+                ADD CARS
+              </NavLink>
+              <button type="button">DELETE CAR</button>
+            </div>
           </div>
 
           <div className="">

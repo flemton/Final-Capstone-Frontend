@@ -10,6 +10,14 @@
   font-size: 0.8rem;
 }
 
+.tesla-logo {
+    width: 10rem;
+}
+
+.burger-menu {
+  display: none !important;
+}
+
 .sidebar-menu {
   height: 100vh;
   width: 15rem;
@@ -23,14 +31,19 @@
   margin: 0;
 }
 
-.sidebar-menu-ul li {
+.sidebar-menu-ul a,
+.sidebar-menu-ul button {
+  width: 100%;
   list-style-type: none;
+  text-decoration: none;
+  color: black;
   padding: 1rem 2.5rem 1rem 0.5rem;
   cursor: pointer;
   text-align: start;
 }
 
-.sidebar-menu-ul li:hover {
+.sidebar-menu-ul a:hover,
+.sidebar-menu-ul button:hover {
   background-color: #e5e5e5;
 }
 
@@ -51,14 +64,18 @@
 }
 
 .show {
-  display: flex !important
+  display: flex !important;
 }
 
 .hide {
-  display: none !important
+  display: none !important;
 }
 
 @media screen and (max-width: 767px) {
+  .burger-menu {
+    display: flex !important;
+  }
+
   .sidebar {
     display: none !important;
   }
