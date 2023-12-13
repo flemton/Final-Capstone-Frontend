@@ -11,10 +11,14 @@
 }
 
 .tesla-logo {
-    width: 10rem;
+  width: 10rem;
 }
 
 .burger-menu {
+  display: none !important;
+}
+
+.burger-menu-navbar {
   display: none !important;
 }
 
@@ -76,7 +80,26 @@
     display: flex !important;
   }
 
+  .burger-menu-navbar {
+    display: flex !important;
+  }
+
   .sidebar {
+    display: none !important;
+  }
+
+  .sidebar-menu-ul a,
+  .sidebar-menu-ul button {
+    width: 100%;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    padding: 1rem 0.5rem 1rem 2.5rem;
+    cursor: pointer;
+    text-align: start;
+  }
+
+  .car-details {
     display: none !important;
   }
 }
