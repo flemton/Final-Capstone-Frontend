@@ -35,7 +35,7 @@ const AddReservation = () => {
                 <div className="card-body create-form vh-75 mobile-text-reserve">
                   <h3 className="text-center text-white ">Reserve a Car</h3>
                   <div className="my-1">
-                    <p className="my-1 text-bg-primary text-center">
+                    <p className="my-1 shadow p-3 mb-5 bg-body-tertiary text-center">
                       Current User: ...
                       {/* {currentUser ? currentUser.name : 'Loading...'} */}
                     </p>
@@ -78,7 +78,7 @@ const AddReservation = () => {
                       </label>
                     </div>
                     <div className="my-2 text-center">
-                      <button className="btn btn-success" type="submit">Reserve</button>
+                      <button className="btn btn-primary" type="submit">Reserve</button>
                     </div>
                   </form>
                 </div>
