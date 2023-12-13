@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import 'boxicons';
 import Logo from './Logo';
 import SidebarIcons from './SidebarIcons';
@@ -12,13 +12,16 @@ const Sidebar = () => (
         <Logo />
         <ul className="sidebar-ul text-center align-self-end">
           <li>
-            <Link to="/reserve">RESERVE MODEL </Link>
+            <NavLink to="/" activeClassName="active">HOME </NavLink>
           </li>
           <li>
-            <Link to="/user_reservations">MY RESERVATIONS</Link>
+            <NavLink to="/reserve" activeClassName="active">RESERVE MODEL </NavLink>
           </li>
           <li>
-            <Link to="/addcar">ADD CARS</Link>
+            <NavLink to="/user_reservations" activeClassName="active">MY RESERVATIONS</NavLink>
+          </li>
+          <li>
+            <NavLink to="/addcar" activeClassName="active">ADD CARS</NavLink>
           </li>
           <li>
             <button type="button">DELETE CAR</button>
