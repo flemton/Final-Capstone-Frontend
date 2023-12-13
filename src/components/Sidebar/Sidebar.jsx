@@ -12,7 +12,7 @@ const Sidebar = () => (
         <Logo />
         <ul className="sidebar-ul text-center align-self-end">
           <li>
-            <NavLink to="/" activeClassName="active">HOME </NavLink>
+            <NavLink to="/" className="sidebar-navlink" activeClassName="active">HOME </NavLink>
           </li>
           <li>
             <NavLink to="/reserve" activeClassName="active">RESERVE MODEL </NavLink>
