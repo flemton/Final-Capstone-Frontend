@@ -14,13 +14,13 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="d-flex vh-100">
-        <div className={`sidebar d-flex flex-column justify-content-between align-content-center py-4 bg-white ${sidebarVisible ? 'show' : 'hide'}`}>
+      <div className="sidebar d-flex vh-100">
+        <div className={`sidebar-menu d-flex flex-column justify-content-between align-content-center py-4 bg-white ${sidebarVisible ? 'show' : 'hide'}`}>
           <div className="d-flex flex-column justify-content-between align-items-center gap-5">
             <Logo />
-            <ul className="sidebar-ul text-center align-self-end">
+            <ul className="sidebar-menu-ul text-center align-self-end">
               <li>
-                <NavLink to="/" className="sidebar-navlink" activeClassName="active">
+                <NavLink to="/" className="sidebar-menu-navlink" activeClassName="active">
                   HOME
                   {' '}
                 </NavLink>
@@ -53,8 +53,8 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <button type="button" onClick={handleClick} className={`sidebar-btn btn btn-primary align-self-end my-3 ${sidebarVisible ? 'mx-0' : 'mx-3'}`}>
-          {sidebarVisible ? <box-icon type="solid" name="left-arrow" /> : <box-icon type="solid" name="right-arrow" />}
+        <button type="button" onClick={handleClick} className={`sidebar-btn btn btn-dark align-self-end my-3 ${sidebarVisible ? 'mx-0' : 'mx-3'}`}>
+          {sidebarVisible ? <box-icon name="left-arrow" color="#fff" /> : <box-icon name="right-arrow" color="#fff" />}
         </button>
       </div>
     </>
