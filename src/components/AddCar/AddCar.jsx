@@ -44,7 +44,7 @@ const AddCar = () => {
           <div className="">
             <form onSubmit={handleSubmit}>
               <div className="row">
-                <div className="mb-3 col-md">
+                <div className="mb-3 col-md d-flex justify-content-end">
                   <label htmlFor="name" className="form-label">
                     Name
                     <input
@@ -74,7 +74,7 @@ const AddCar = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="mb-3 col-md">
+                <div className="mb-3 col-md d-flex justify-content-end">
                   <label htmlFor="deposit" className="form-label">
                     Deposit
                     <input
@@ -104,7 +104,7 @@ const AddCar = () => {
                 </div>
               </div>
               <div className="row">
-                <div className=" mb-3 col-md">
+                <div className=" mb-3 col-md d-flex justify-content-end">
                   <label htmlFor="option_to_purchase_fee" className="form-label">
                     Option to purchase fee
                     <input
@@ -133,7 +133,7 @@ const AddCar = () => {
                   </label>
                 </div>
               </div>
-              <div className="mb-3 col-md">
+              <div className="mb-3 col-md d-flex justify-content-center">
                 <label htmlFor="duration" className="form-label">
                   Duration
                   <input

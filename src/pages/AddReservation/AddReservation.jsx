@@ -29,8 +29,8 @@ const AddReservation = () => {
           Back
         </button>
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-10">
+          <div className="row">
+            <div className="col-12">
               <div className="card bg-transparent border-light mt-5">
                 <div className="card-body create-form vh-75 mobile-text-reserve">
                   <h3 className="text-center text-white ">Reserve a Car</h3>
