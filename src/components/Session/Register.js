@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerAsync } from '../../redux/slices/registerSlice';
 
 const Register = () => {
@@ -9,17 +9,23 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const data = useSelector((state) => state.register);
 
   const handleSignUp = (e) => {
     e.preventDefault();
     dispatch(registerAsync({ username, email, password })).then((success) => {
       if (success) {
-        navigate('/');
+        navigate('/home');
       }
     });
   };
 
-  console.log(username);
+  useEffect(() => {
+    console.log(data);
+    if (data?.success) {
+      navigate('/home');
+    }
+  }, [data, navigate]);
 
   return (
     <>

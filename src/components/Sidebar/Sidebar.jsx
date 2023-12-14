@@ -19,7 +19,7 @@ const Sidebar = () => {
           <div className="d-flex flex-column justify-content-between align-items-center gap-5">
             <Logo />
             <div className="sidebar-menu-ul d-flex flex-column align-self-end">
-              <NavLink to="/" className="sidebar-menu-navlink" activeClassName="active">
+              <NavLink to="/home" className="sidebar-menu-navlink" activeClassName="active">
                 HOME
               </NavLink>
               <NavLink to="/reserve" activeClassName="active">
