@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import apiUrl from '../../misc/apiUrl';
 
 export const registerAsync = createAsyncThunk(
   'register/registerAsync',
   async ({ username, email, password }) => {
-    const response = await fetch('http://localhost:3000/api/users', {
+    const response = await fetch(`${apiUrl}users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -19,7 +20,6 @@ export const registerAsync = createAsyncThunk(
 
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
       return data;
     }
     const errorData = await response.json();
