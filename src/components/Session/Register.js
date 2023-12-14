@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { registerAsync } from '../../redux/slices/registerSlice';
 
 const Register = () => {
-  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    alert('Register');
+    dispatch(registerAsync({ username, email, password })).then((success) => {
+      if (success) {
+        navigate('/');
+      }
+    });
   };
+
+  console.log(username);
 
   return (
     <>
@@ -24,8 +33,8 @@ const Register = () => {
                   type="text"
                   className="form-control"
                   placeholder="User Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   required
                 />
               </div>
@@ -51,7 +60,11 @@ const Register = () => {
                 />
               </div>
               <div className="d-flex justify-content-between">
-                <button className="border-1 btn m-2 rounded-circle btn-warning" onClick={() => navigate('/')} type="button">
+                <button
+                  className="border-1 btn m-2 rounded-circle btn-warning"
+                  onClick={() => navigate('/')}
+                  type="button"
+                >
                   Back
                 </button>
                 <button type="submit" className="border-1 btn m-2 rounded-circle btn-primary">
