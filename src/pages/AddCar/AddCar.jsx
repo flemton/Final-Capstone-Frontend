@@ -51,6 +51,7 @@ const AddCar = () => {
                       type="text"
                       className="form-control"
                       id="name"
+                      name="name"
                       placeholder="John Doe"
                       value={formData.name}
                       onChange={handleInputChange}
@@ -65,6 +66,7 @@ const AddCar = () => {
                       type="text"
                       className="form-control"
                       id="description"
+                      name="description"
                       placeholder="Tesla cars are ..."
                       value={formData.description}
                       onChange={handleInputChange}
@@ -81,6 +83,7 @@ const AddCar = () => {
                       type="number"
                       className="form-control"
                       id="deposit"
+                      name="deposit"
                       placeholder="0"
                       value={formData.deposit}
                       onChange={handleInputChange}
@@ -95,6 +98,7 @@ const AddCar = () => {
                       type="number"
                       className="form-control"
                       id="finance_fee"
+                      name="finance_fee"
                       placeholder="0"
                       value={formData.finance_fee}
                       onChange={handleInputChange}
@@ -112,6 +116,7 @@ const AddCar = () => {
                       className="form-control"
                       id="option_to_purchase_fee"
                       placeholder="0"
+                      name="option_to_purchase_fee"
                       value={formData.option_to_purchase_fee}
                       onChange={handleInputChange}
                       required
@@ -125,6 +130,7 @@ const AddCar = () => {
                       type="number"
                       className="form-control"
                       id="total_amount_payable"
+                      name="total_amount_payable"
                       placeholder="0"
                       value={formData.total_amount_payable}
                       onChange={handleInputChange}
@@ -139,6 +145,7 @@ const AddCar = () => {
                   <input
                     type="number"
                     className="form-control"
+                    name="duration"
                     id="duration"
                     placeholder="0"
                     value={formData.duration}
