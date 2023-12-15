@@ -35,8 +35,10 @@ export const loginAsync = (email, password) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email,
-        password,
+        user: {
+          email,
+          password,
+        },
       }),
       credentials: 'include',
     });
