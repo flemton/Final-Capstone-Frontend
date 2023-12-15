@@ -17,7 +17,6 @@ const createCar = createAsyncThunk('car/add', async (formData) => {
     body: teslaData,
   });
   const data = await response.json();
-  console.log('Success, data: ', data);
   return data;
 });
 
