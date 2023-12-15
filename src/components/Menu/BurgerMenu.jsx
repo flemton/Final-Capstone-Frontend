@@ -42,27 +42,27 @@ const BurgerMenu = () => {
             <div className="d-flex flex-column justify-content-between align-items-center gap-4">
               <Logo />
               <div className="sidebar-menu-ul d-flex flex-column align-self-start my-3">
-                <NavLink to="/" className="sidebar-menu-navlink text-end" activeClassName="active">
+                <NavLink to="/home" className="sidebar-menu-navlink text-end" activeclassname="active">
                   HOME
                 </NavLink>
                 <NavLink
                   to="/reserve"
                   className="sidebar-menu-navlink text-end"
-                  activeClassName="active"
+                  activeclassname="active"
                 >
                   RESERVE MODEL
                 </NavLink>
                 <NavLink
                   to="/user_reservations"
                   className="sidebar-menu-navlink text-end"
-                  activeClassName="active"
+                  activeclassname="active"
                 >
                   MY RESERVATIONS
                 </NavLink>
                 <NavLink
                   to="/addcar"
                   className="sidebar-menu-navlink text-end"
-                  activeClassName="active"
+                  activeclassname="active"
                 >
                   ADD CARS
                 </NavLink>
