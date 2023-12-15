@@ -54,8 +54,4 @@ export const loginAsync = (email, password) => async (dispatch) => {
   }
 };
 
-export const selectData = (state) => state.login.data;
-export const selectLoading = (state) => state.login.loading;
-export const selectError = (state) => state.login.error;
-
 export default loginSlice.reducer;

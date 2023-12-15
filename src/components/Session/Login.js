@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './session.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectData, loginAsync } from '../../redux/slices/loginSlice';
+import { loginAsync } from '../../redux/slices/loginSlice';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const data = useSelector(selectData);
+  const { data } = useSelector((state) => state.login);
 
   const handleLogin = (e) => {
     e.preventDefault();

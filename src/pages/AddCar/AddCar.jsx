@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import createCar from '../../redux/requests/createCar';
 
 const AddCar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    deposit: 0,
-    finance_fee: 0,
-    option_to_purchase_fee: 0,
-    total_amount_payable: 0,
-    duration: 0,
+    deposit: '',
+    finance_fee: '',
+    option_to_purchase_fee: '',
+    total_amount_payable: '',
+    duration: '',
+    removed: false,
+    image: null,
   });
 
   const handleInputChange = (e) => {
@@ -21,8 +26,13 @@ const AddCar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('form data is ', formData);
+    dispatch(createCar(formData));
     navigate('/home');
+  };
+
+  const handleImageChange = (e) => {
+    const imageFile = e.target.files[0];
+    setFormData({ ...formData, image: imageFile });
   };
 
   return (
@@ -51,6 +61,7 @@ const AddCar = () => {
                       type="text"
                       className="form-control"
                       id="name"
+                      name="name"
                       placeholder="John Doe"
                       value={formData.name}
                       onChange={handleInputChange}
@@ -65,6 +76,7 @@ const AddCar = () => {
                       type="text"
                       className="form-control"
                       id="description"
+                      name="description"
                       placeholder="Tesla cars are ..."
                       value={formData.description}
                       onChange={handleInputChange}
@@ -81,6 +93,7 @@ const AddCar = () => {
                       type="number"
                       className="form-control"
                       id="deposit"
+                      name="deposit"
                       placeholder="0"
                       value={formData.deposit}
                       onChange={handleInputChange}
@@ -95,6 +108,7 @@ const AddCar = () => {
                       type="number"
                       className="form-control"
                       id="finance_fee"
+                      name="finance_fee"
                       placeholder="0"
                       value={formData.finance_fee}
                       onChange={handleInputChange}
@@ -112,6 +126,7 @@ const AddCar = () => {
                       className="form-control"
                       id="option_to_purchase_fee"
                       placeholder="0"
+                      name="option_to_purchase_fee"
                       value={formData.option_to_purchase_fee}
                       onChange={handleInputChange}
                       required
@@ -125,6 +140,7 @@ const AddCar = () => {
                       type="number"
                       className="form-control"
                       id="total_amount_payable"
+                      name="total_amount_payable"
                       placeholder="0"
                       value={formData.total_amount_payable}
                       onChange={handleInputChange}
@@ -139,6 +155,7 @@ const AddCar = () => {
                   <input
                     type="number"
                     className="form-control"
+                    name="duration"
                     id="duration"
                     placeholder="0"
                     value={formData.duration}
@@ -147,9 +164,22 @@ const AddCar = () => {
                   />
                 </label>
               </div>
+              <div>
+                <label htmlFor="image" className=" input-text w-100">
+                  Image:
+                  <input
+                    className="input-field"
+                    type="file"
+                    id="image"
+                    name="image"
+                    onChange={handleImageChange}
+                    accept="image/*"
+                  />
+                </label>
+              </div>
               <div className="row d-flex justify-content-center">
                 <div className="col-md text-center">
-                  <button className="btn btn-primary px-5 mx-5 text-white" type="button">
+                  <button className="btn btn-primary px-5 mx-5 text-white" type="submit">
                     Submit
                   </button>
                 </div>

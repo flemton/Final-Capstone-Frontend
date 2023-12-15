@@ -4,16 +4,16 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => (
   <div className="burger-menu-navbar">
     <div className="sidebar-menu-ul d-flex flex-column align-self-end w-100">
-      <NavLink to="/" activeClassName="active">
+      <NavLink to="/home" activeclassname="active">
         HOME
       </NavLink>
-      <NavLink to="/reserve" activeClassName="active">
+      <NavLink to="/reserve" activeclassname="active">
         RESERVE MODEL
       </NavLink>
-      <NavLink to="/user_reservations" activeClassName="active">
+      <NavLink to="/user_reservations" activeclassname="active">
         MY RESERVATIONS
       </NavLink>
-      <NavLink to="/addcar" activeClassName="active">
+      <NavLink to="/addcar" activeclassname="active">
         ADD CARS
       </NavLink>
       <button type="button">DELETE CAR</button>
