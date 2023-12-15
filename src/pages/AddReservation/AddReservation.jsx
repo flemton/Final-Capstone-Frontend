@@ -25,7 +25,7 @@ const AddReservation = () => {
       </div>
 
       <div className="w-100 vh-100 mx-3 py-3">
-        <button className="border-1 btn m-2 btn btn-primary" onClick={() => navigate('/')} type="button">
+        <button className="border-1 btn m-2 btn btn-primary" onClick={() => navigate('/home')} type="button">
           Back
         </button>
         <div className="container">

@@ -6,13 +6,14 @@ import './App.css';
 import Login from './components/Session/Login';
 import Register from './components/Session/Register';
 import AddReservation from './pages/AddReservation/AddReservation';
+import Session from './components/Session/Session';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" />
+        <Route path="/" element={<Session />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/addcar" element={<AddCar />} />
