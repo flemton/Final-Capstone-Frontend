@@ -156,7 +156,7 @@ const AddCar = () => {
               </div>
               <div className="row d-flex justify-content-center">
                 <div className="col-md text-center">
-                  <button className="btn btn-primary px-5 mx-5 text-white" type="button">
+                  <button className="btn btn-primary px-5 mx-5 text-white" type="submit">
                     Submit
                   </button>
                 </div>
