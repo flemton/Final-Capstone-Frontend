@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import createCar from '../../redux/requests/createCar';
 
 const AddCar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    deposit: 0,
-    finance_fee: 0,
-    option_to_purchase_fee: 0,
-    total_amount_payable: 0,
-    duration: 0,
+    deposit: '',
+    finance_fee: '',
+    option_to_purchase_fee: '',
+    total_amount_payable: '',
+    duration: '',
+    removed: false,
+    image: null,
   });
 
   const handleInputChange = (e) => {
@@ -21,8 +26,13 @@ const AddCar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('form data is ', formData);
+    dispatch(createCar(formData));
     navigate('/home');
+  };
+
+  const handleImageChange = (e) => {
+    const imageFile = e.target.files[0];
+    setFormData({ ...formData, image: imageFile });
   };
 
   return (
@@ -151,6 +161,19 @@ const AddCar = () => {
                     value={formData.duration}
                     onChange={handleInputChange}
                     required
+                  />
+                </label>
+              </div>
+              <div>
+                <label htmlFor="image" className=" input-text w-100">
+                  Image:
+                  <input
+                    className="input-field"
+                    type="file"
+                    id="image"
+                    name="image"
+                    onChange={handleImageChange}
+                    accept="image/*"
                   />
                 </label>
               </div>
