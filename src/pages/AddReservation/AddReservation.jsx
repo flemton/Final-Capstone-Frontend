@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import getUser from '../../redux/requests/getUser';
 
 const AddReservation = () => {
+  const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.user.currentUser);
   const navigate = useNavigate();
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
@@ -17,6 +21,12 @@ const AddReservation = () => {
     };
     console.log('reservation data is', reservationData);
   };
+
+  useEffect(() => {
+    if (!currentUser) {
+      dispatch(getUser());
+    }
+  }, [dispatch, currentUser]);
 
   return (
     <div className="d-flex justify-content-between align-items-center">
@@ -36,8 +46,8 @@ const AddReservation = () => {
                   <h3 className="text-center text-white ">Reserve a Car</h3>
                   <div className="my-1">
                     <p className="my-1 shadow p-3 mb-5 bg-body-tertiary text-center">
-                      Current User: ...
-                      {/* {currentUser ? currentUser.name : 'Loading...'} */}
+                      Current User:
+                      <span className="px-2">{currentUser ? currentUser[0].username : 'Loading...'}</span>
                     </p>
                   </div>
                   <form className="needs-validation" noValidate onSubmit={handleReservation}>
