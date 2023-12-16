@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import apiUrl from '../../misc/apiUrl';
 
-const createCar = createAsyncThunk('car/add', async (formData) => {
+const createCar = createAsyncThunk('cars/add', async (formData) => {
   const teslaData = new FormData();
   teslaData.append('tesla_model[name]', formData.name);
   teslaData.append('tesla_model[description]', formData.description);
