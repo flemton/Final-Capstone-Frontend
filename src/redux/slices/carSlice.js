@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import createCar from '../requests/createCar';
+import getCars from '../requests/getCars';
 
 const initialState = {
   cars: [],
@@ -15,6 +16,11 @@ const carSlice = createSlice({
     builder.addCase(createCar.fulfilled, (state) => ({
       ...state,
       loading: false,
+    }));
+    builder.addCase(getCars.fulfilled, (state, action) => ({
+      ...state,
+      loading: false,
+      cars: action.payload,
     }));
   },
 });
