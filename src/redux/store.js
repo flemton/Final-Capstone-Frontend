@@ -3,6 +3,7 @@ import registerReducer from './slices/registerSlice';
 import loginReducer from './slices/loginSlice';
 import userReducer from './slices/userSlice';
 import carReducer from './slices/carSlice';
+import reservationReducer from './slices/reservationSlice';
 
 const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ const store = configureStore({
     login: loginReducer,
     user: userReducer,
     car: carReducer,
+    reservation: reservationReducer,
   },
 });
 
