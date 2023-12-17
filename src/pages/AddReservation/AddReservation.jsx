@@ -8,10 +8,12 @@ import createUserReservation from '../../redux/requests/createUserReservation';
 const AddReservation = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.user?.currentUser);
+  const cars = useSelector((state) => state.car.cars);
   const navigate = useNavigate();
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [city, setCity] = useState('');
+  const [selectedCar, setSelectedCar] = useState('');
 
   const handleReservation = async (e) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ const AddReservation = () => {
       city,
       user_id: currentUser.id,
     };
-    dispatch(createUserReservation(reservationData));
+    dispatch(createUserReservation({ reservationData, selectedCar }));
     navigate('/home');
   };
 
@@ -56,6 +58,29 @@ const AddReservation = () => {
                       Current User:
                       <span className="px-2">
                         {currentUser ? currentUser.username : 'Loading...'}
+                      </span>
+                    </p>
+                  </div>
+                  <div className="my-1">
+                    <p className="my-1 shadow p-3 mb-5 bg-body-tertiary text-center">
+                      Select Tesla Model:
+                      <span className="px-2">
+                        {cars ? (
+                          <select
+                            id="car_selection"
+                            value={selectedCar}
+                            onChange={(e) => setSelectedCar(e.target.value)}
+                            required
+                          >
+                            {cars.map((car) => (
+                              <option key={car.id} value={car.id}>
+                                {car.name}
+                              </option>
+                            ))}
+                          </select>
+                        ) : (
+                          <p>Cars loading or no cars, please add cars</p>
+                        )}
                       </span>
                     </p>
                   </div>
