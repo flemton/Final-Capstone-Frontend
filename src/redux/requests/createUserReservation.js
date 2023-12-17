@@ -3,10 +3,10 @@ import apiUrl from '../../misc/apiUrl';
 
 const createUserReservation = createAsyncThunk(
   'reservations/addReservation',
-  async (reservationData, { rejectWithValue }) => {
+  async (data, { rejectWithValue }) => {
+    const { reservationData, selectedCar } = data;
     try {
-      const carId = 6;
-      const response = await fetch(`${apiUrl}tesla_models/${carId}/reservations`, {
+      const response = await fetch(`${apiUrl}tesla_models/${selectedCar}/reservations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
