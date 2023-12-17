@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import getUser from '../../redux/requests/getUser';
+import createUserReservation from '../../redux/requests/createUserReservation';
 
 const AddReservation = () => {
   const dispatch = useDispatch();
-  const currentUser = useSelector((state) => state.user.currentUser);
+  const currentUser = useSelector((state) => state.user?.currentUser);
   const navigate = useNavigate();
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
@@ -15,11 +16,13 @@ const AddReservation = () => {
   const handleReservation = async (e) => {
     e.preventDefault();
     const reservationData = {
-      start_time: startTime,
-      end_time: endTime,
+      start_data: startTime,
+      end_date: endTime,
       city,
+      user_id: currentUser.id,
     };
-    console.log('reservation data is', reservationData);
+    dispatch(createUserReservation(reservationData));
+    navigate('/home');
   };
 
   useEffect(() => {
@@ -35,7 +38,11 @@ const AddReservation = () => {
       </div>
 
       <div className="w-100 vh-100 mx-3 py-3">
-        <button className="border-1 btn m-2 btn btn-primary" onClick={() => navigate('/home')} type="button">
+        <button
+          className="border-1 btn m-2 btn btn-primary"
+          onClick={() => navigate('/home')}
+          type="button"
+        >
           Back
         </button>
         <div className="container">
@@ -47,7 +54,9 @@ const AddReservation = () => {
                   <div className="my-1">
                     <p className="my-1 shadow p-3 mb-5 bg-body-tertiary text-center">
                       Current User:
-                      <span className="px-2">{currentUser ? currentUser[0].username : 'Loading...'}</span>
+                      <span className="px-2">
+                        {currentUser ? currentUser.username : 'Loading...'}
+                      </span>
                     </p>
                   </div>
                   <form className="needs-validation" noValidate onSubmit={handleReservation}>
@@ -88,7 +97,9 @@ const AddReservation = () => {
                       </label>
                     </div>
                     <div className="my-2 text-center">
-                      <button className="btn btn-primary" type="submit">Reserve</button>
+                      <button className="btn btn-primary" type="submit">
+                        Reserve
+                      </button>
                     </div>
                   </form>
                 </div>
