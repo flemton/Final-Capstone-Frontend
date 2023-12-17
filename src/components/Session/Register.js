@@ -5,15 +5,13 @@ import { registerAsync } from '../../redux/slices/registerSlice';
 
 const Register = () => {
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const data = useSelector((state) => state.register);
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    dispatch(registerAsync({ username, email, password })).then((success) => {
+    dispatch(registerAsync({ username })).then((success) => {
       if (success) {
         navigate('/home');
       }
@@ -21,7 +19,6 @@ const Register = () => {
   };
 
   useEffect(() => {
-    console.log(data);
     if (data?.success) {
       navigate('/home');
     }
@@ -41,27 +38,6 @@ const Register = () => {
                   placeholder="User Name"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="mb-3">
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
                   required
                 />
               </div>
