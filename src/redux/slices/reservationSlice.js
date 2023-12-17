@@ -47,12 +47,13 @@ const reservationSlice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(deleteReservation.fulfilled, (state, action) => {
-        state.loading = false;
-        state.reservations = state.reservations.filter(
-          (reservation) => reservation.reservation.id !== action.payload,
-        );
-      })
+      .addCase(deleteReservation.fulfilled, (state, action) => ({
+        ...state,
+        loading: false,
+        reservations: state.reservations.filter(
+          (reservation) => reservation.id !== action.payload,
+        ),
+      }))
       .addCase(deleteReservation.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;

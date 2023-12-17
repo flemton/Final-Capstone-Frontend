@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import getUserReservations from '../../redux/requests/getUserReservations';
+import { deleteReservation } from '../../redux/slices/reservationSlice';
 
 const ReservationList = () => {
   const navigate = useNavigate();
@@ -77,7 +78,7 @@ const ReservationList = () => {
                             {reservation.tesla_model.deposit}
                           </p>
                         </div>
-                        <button type="button" className="btn btn-danger btn-text mt-2">
+                        <button type="button" className="btn btn-danger btn-text mt-2" onClick={() => dispatch(deleteReservation(reservation.id))}>
                           Delete
                         </button>
                       </li>
