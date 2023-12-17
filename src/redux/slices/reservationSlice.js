@@ -1,25 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import getUserReservations from '../requests/getUserReservations';
 
-// Thunk para obtener las reservas del usuario
-export const fetchUserReservations = createAsyncThunk('reservation/fetchUserReservations', async () => {
-  const response = await fetch('http://localhost:3000/api/user_reservations', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    credentials: 'include',
-  });
-
-  if (response.ok) {
-    const data = await response.json();
-    return data;
-  }
-
-  const errorData = await response.json();
-  throw new Error(errorData.message);
-});
-
-// Thunk para eliminar una reserva
 export const deleteReservation = createAsyncThunk(
   'reservation/deleteReservation',
   async (reservationId) => {
@@ -37,7 +18,6 @@ export const deleteReservation = createAsyncThunk(
   },
 );
 
-// Definición del slice de reservas
 const reservationSlice = createSlice({
   name: 'reservation',
   initialState: {
@@ -48,19 +28,21 @@ const reservationSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchUserReservations.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(fetchUserReservations.fulfilled, (state, action) => {
-        state.loading = false;
-        state.reservations = action.payload;
-      })
-      .addCase(fetchUserReservations.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      })
-      // Casos para el thunk de eliminación
+      .addCase(getUserReservations.pending, (state) => ({
+        ...state,
+        loading: true,
+        error: null,
+      }))
+      .addCase(getUserReservations.fulfilled, (state, action) => ({
+        ...state,
+        loading: false,
+        reservations: action.payload,
+      }))
+      .addCase(getUserReservations.rejected, (state, action) => ({
+        ...state,
+        loading: false,
+        error: action.error.message,
+      }))
       .addCase(deleteReservation.pending, (state) => {
         state.loading = true;
         state.error = null;
