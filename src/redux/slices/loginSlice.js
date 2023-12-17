@@ -26,7 +26,7 @@ const loginSlice = createSlice({
 
 export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } = loginSlice.actions;
 
-export const loginAsync = (email, password) => async (dispatch) => {
+export const loginAsync = (username) => async (dispatch) => {
   dispatch(fetchDataStart());
   try {
     const response = await fetch(`${apiUrl}login`, {
@@ -36,8 +36,7 @@ export const loginAsync = (email, password) => async (dispatch) => {
       },
       body: JSON.stringify({
         user: {
-          email,
-          password,
+          username,
         },
       }),
       credentials: 'include',

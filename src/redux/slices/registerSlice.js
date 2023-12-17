@@ -3,7 +3,7 @@ import apiUrl from '../../misc/apiUrl';
 
 export const registerAsync = createAsyncThunk(
   'register/registerAsync',
-  async ({ username, email, password }) => {
+  async ({ username }) => {
     const response = await fetch(`${apiUrl}users`, {
       method: 'POST',
       headers: {
@@ -12,8 +12,6 @@ export const registerAsync = createAsyncThunk(
       body: JSON.stringify({
         user: {
           username,
-          email,
-          password,
         },
       }),
     });

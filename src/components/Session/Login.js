@@ -5,15 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginAsync } from '../../redux/slices/loginSlice';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.login);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(loginAsync(email, password));
+    dispatch(loginAsync(username));
   };
 
   useEffect(() => {
@@ -31,21 +30,11 @@ const Login = () => {
               <h2 className="text-center mb-4">LogIn</h2>
               <div className="mb-3">
                 <input
-                  type="email"
+                  type="name"
                   className="form-control"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   required
                 />
               </div>
