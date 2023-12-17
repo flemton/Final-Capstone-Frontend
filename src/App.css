@@ -88,6 +88,34 @@
   display: none !important;
 }
 
+.session-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('../public/Tesla2.jpg');
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.session-box {
+  width: 90%;
+  max-width: 500px;
+  min-width: 300px;
+  min-height: 250px;
+  padding: 2rem 1rem 1.5rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  border-radius: 20px;
+}
+
 @media screen and (max-width: 767px) {
   .burger-menu {
     display: flex !important;
@@ -126,4 +154,5 @@
   .car-details {
     display: none !important;
   }
+
 }
