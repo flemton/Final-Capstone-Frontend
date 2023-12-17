@@ -7,6 +7,7 @@ import Login from './components/Session/Login';
 import Register from './components/Session/Register';
 import AddReservation from './pages/AddReservation/AddReservation';
 import Session from './components/Session/Session';
+import CarDetails from './components/CarDetails/CarDetails';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/addcar" element={<AddCar />} />
         <Route path="/user_reservations" element={<ReservationList />} />
         <Route path="/reserve" element={<AddReservation />} />
+        <Route path="/car-details" element={<CarDetails />} />
       </Routes>
     </Router>
   );

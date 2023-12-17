@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import CarDetails from '../../components/CarDetails/CarDetails';
+import Main from '../../components/Main/Main';
 import BurgerMenu from '../../components/Menu/BurgerMenu';
 import Session from '../../components/Session/Session';
 
@@ -18,7 +18,7 @@ const Home = () => {
       </div>
 
       <div className="mx-3">
-        <CarDetails />
+        <Main />
       </div>
     </div>
   );
