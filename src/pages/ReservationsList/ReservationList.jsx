@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import getUserReservations from '../../redux/requests/getUserReservations';
 import { deleteReservation } from '../../redux/slices/reservationSlice';
+import Logo from '../../components/Sidebar/Logo';
 
 const ReservationList = () => {
   const navigate = useNavigate();
@@ -30,12 +31,15 @@ const ReservationList = () => {
             Back
           </button>
 
-          <div className="container">
+          <div className="position-absolute start-0 pt-2 pb-3 w-50 ps-4">
+            <Logo />
+          </div>
+
+          <div className="container mt-3">
             <div className="align-items-center justify-content-center row text-center">
               <div className="col-12">
                 <div className="reserve-form">
-                  <h3 className="text-black">Your Reservations</h3>
-                  <hr />
+                  <h1 className="text-center font-weight-bold my-4">My Reservations</h1>
                   {reservations && reservations.length > 0 ? (
                     <div>
                       {reservations?.map((reservation) => (
@@ -71,11 +75,7 @@ const ReservationList = () => {
                           <tfoot>
                             <tr>
                               <td>
-                                <button
-                                  type="button"
-                                  className="btn btn-dark btn-text mt-2"
-                                  onClick={() => navigate(`/car-details/${reservation.tesla_model.id}`)}
-                                >
+                                <button type="button" className="btn btn-dark btn-text mt-2">
                                   Details
                                 </button>
                               </td>
