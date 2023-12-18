@@ -1,12 +1,25 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import Main from '../../components/Main/Main';
 import BurgerMenu from '../../components/Menu/BurgerMenu';
 import Session from '../../components/Session/Session';
+import getCars from '../../redux/requests/getCars';
+import CarsCard from '../../components/CarsCard/CarsCard';
 
 const Home = () => {
   const user = useSelector((state) => state.login.data);
+
+  const cars = useSelector((state) => state.car?.cars);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCars());
+  }, []);
+
+  const handleCarClick = (carId) => {
+    navigate(`/car-details/${carId}`);
+  };
 
   return !user?.success ? (
     <Session />
@@ -17,9 +30,7 @@ const Home = () => {
         <BurgerMenu />
       </div>
 
-      <div className="mx-3">
-        <Main />
-      </div>
+      <CarsCard cars={cars} onCarClick={handleCarClick} />
     </div>
   );
 };
