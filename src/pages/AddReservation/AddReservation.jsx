@@ -19,7 +19,7 @@ const AddReservation = () => {
   const handleReservation = async (e) => {
     e.preventDefault();
     const reservationData = {
-      start_data: startTime,
+      start_date: startTime,
       end_date: endTime,
       city,
       user_id: currentUser.id,
