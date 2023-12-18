@@ -54,9 +54,9 @@ const AddReservation = () => {
         <Sidebar />
       </div>
 
-      <div className="w-100 vh-100 mx-3 py-3">
+      <div className="pages-layout">
         <button
-          className="border-1 btn m-2 btn btn-outline-dark"
+          className="btn btn-outline-dark align-self-end"
           onClick={() => navigate('/home')}
           type="button"
         >
