@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import CarDetails from '../CarDetails/CarDetails';
 import deleteCar from '../../redux/requests/deleteCar';
 
-const CarsCard = ({ cars }) => {
+const CarsCard = ({ cars, delete: isDeleteMode }) => {
   const dispatch = useDispatch();
   const deleting = useSelector((state) => state.car.deleting);
   const [selectedCar, setSelectedCar] = useState(null);
@@ -93,7 +93,7 @@ const CarsCard = ({ cars }) => {
                           className="btn btn-outline-dark btn-sm mt-2"
                           onClick={() => handleCarClick(car)}
                         >
-                          View Details
+                          {isDeleteMode ? 'Delete' : 'View Details'}
                         </button>
                       </div>
                     )}
@@ -117,6 +117,11 @@ CarsCard.propTypes = {
       image_url: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  delete: PropTypes.bool,
+};
+
+CarsCard.defaultProps = {
+  delete: false,
 };
 
 export default CarsCard;
