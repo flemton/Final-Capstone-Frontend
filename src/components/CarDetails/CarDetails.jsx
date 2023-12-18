@@ -66,7 +66,11 @@ const CarDetails = ({ car }) => {
         </div>
 
         <div className="text-center my-2">
-          <button className="btn btn-dark px-5 text-white" type="button">
+          <button
+            className="btn btn-dark px-5 text-white"
+            type="button"
+            onClick={() => navigate('/reserve')}
+          >
             Reserve
           </button>
         </div>
