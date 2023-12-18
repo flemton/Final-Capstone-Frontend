@@ -50,7 +50,7 @@ const AddCar = () => {
           Back
         </button>
 
-        <div className="container m-4">
+        <div className="container mx-auto my-5">
           <form
             onSubmit={handleSubmit}
             className="d-flex flex-column justify-content-center align-items-center"
