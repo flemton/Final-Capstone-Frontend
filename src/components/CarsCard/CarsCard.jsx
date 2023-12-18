@@ -6,16 +6,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { EffectCards, Navigation } from 'swiper/modules';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import CarDetails from '../CarDetails/CarDetails';
 import deleteCar from '../../redux/requests/deleteCar';
 
 const CarsCard = ({ cars, delete: isDeleteMode }) => {
   const dispatch = useDispatch();
-  const deleting = useSelector((state) => state.car.deleting);
   const [selectedCar, setSelectedCar] = useState(null);
-
   const breakpoints = {
     768: {
       slidesPerView: 1,
@@ -33,12 +31,12 @@ const CarsCard = ({ cars, delete: isDeleteMode }) => {
       slidesPerView: 4,
     },
   };
-
   const handleCarClick = (car) => {
     setSelectedCar(car);
   };
 
   const handleDeleteCar = (carId) => {
+    console.log('delete', carId);
     dispatch(deleteCar(carId));
   };
 
@@ -57,7 +55,7 @@ const CarsCard = ({ cars, delete: isDeleteMode }) => {
           </p>
         </div>
       )}
-      {selectedCar ? (
+      {selectedCar && !isDeleteMode ? (
         <CarDetails car={selectedCar} onGoBack={handleGoBack} />
       ) : (
         <Swiper
@@ -76,7 +74,7 @@ const CarsCard = ({ cars, delete: isDeleteMode }) => {
                   <h6 className="mt-4 mb-0">{car.name}</h6>
                   <div>
                     <p className="m-0 p-0 text-black-50">{car.description}</p>
-                    {deleting ? (
+                    {isDeleteMode ? (
                       <div>
                         <button
                           type="button"
@@ -93,7 +91,7 @@ const CarsCard = ({ cars, delete: isDeleteMode }) => {
                           className="btn btn-outline-dark btn-sm mt-2"
                           onClick={() => handleCarClick(car)}
                         >
-                          {isDeleteMode ? 'Delete' : 'View Details'}
+                          View Details
                         </button>
                       </div>
                     )}
