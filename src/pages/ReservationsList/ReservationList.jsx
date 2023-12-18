@@ -23,7 +23,7 @@ const ReservationList = () => {
 
         <div className="w-100 vh-100 mx-3 py-3">
           <button
-            className="border-1 btn m-2 btn btn-primary"
+            className="border-1 btn m-2 btn btn-outline-dark"
             onClick={() => navigate('/home')}
             type="button"
           >
@@ -34,56 +34,70 @@ const ReservationList = () => {
             <div className="align-items-center justify-content-center row text-center">
               <div className="col-12">
                 <div className="reserve-form">
-                  <h3 className="text-white">Your Reservations</h3>
-
-                  <div className="text-white">You dont have reservations yet</div>
-                  <ul>
-                    {reservations?.map((reservation) => (
-                      <li
-                        className="border-dark reservation-item fs-10 list-unstyled"
-                        key={reservation.id}
-                      >
-                        <div>
-                          <p>
-                            Car Name:
-                            {' '}
-                            {reservation.tesla_model.name}
-                          </p>
-                        </div>
-                        <div>
-                          <p>
-                            Start Time:
-                            {' '}
-                            {reservation.start_date}
-                          </p>
-                        </div>
-                        <div>
-                          <p>
-                            End Time:
-                            {' '}
-                            {reservation.end_date}
-                          </p>
-                        </div>
-                        <div>
-                          <p>
-                            City:
-                            {' '}
-                            {reservation.city}
-                          </p>
-                        </div>
-                        <div>
-                          <p>
-                            Deposit:
-                            {' £'}
-                            {reservation.tesla_model.deposit}
-                          </p>
-                        </div>
-                        <button type="button" className="btn btn-danger btn-text mt-2" onClick={() => dispatch(deleteReservation(reservation.id))}>
-                          Delete
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-black">Your Reservations</h3>
+                  <hr />
+                  {reservations && reservations.length > 0 ? (
+                    <div>
+                      {reservations?.map((reservation) => (
+                        <table
+                          className="table table-borderless table-striped mt-4"
+                          key={reservation.id}
+                        >
+                          <tbody className="border-dark reservation-item fs-10 list-unstyled">
+                            <tr>
+                              <td>Car Name:</td>
+                              <td>{reservation.tesla_model.name}</td>
+                            </tr>
+                            <tr>
+                              <td>Start Time:</td>
+                              <td>{reservation.start_date}</td>
+                            </tr>
+                            <tr>
+                              <td>End Time:</td>
+                              <td>{reservation.end_date}</td>
+                            </tr>
+                            <tr>
+                              <td>City:</td>
+                              <td>{reservation.city}</td>
+                            </tr>
+                            <tr>
+                              <td>Deposit:</td>
+                              <td>
+                                {' £'}
+                                {reservation.tesla_model.deposit}
+                              </td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td>
+                                <button
+                                  type="button"
+                                  className="btn btn-dark btn-text mt-2"
+                                  onClick={() => navigate(`/car-details/${reservation.tesla_model.id}`)}
+                                >
+                                  Details
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  className="btn btn-danger btn-text mt-2"
+                                  onClick={() => dispatch(deleteReservation(reservation.id))}
+                                >
+                                  Delete
+                                </button>
+                              </td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      ))}
+                    </div>
+                  ) : (
+                    <div>
+                      <p>No reservations yet</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

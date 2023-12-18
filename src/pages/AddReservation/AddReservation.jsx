@@ -41,7 +41,7 @@ const AddReservation = () => {
 
       <div className="w-100 vh-100 mx-3 py-3">
         <button
-          className="border-1 btn m-2 btn btn-primary"
+          className="border-1 btn m-2 btn btn-outline-dark"
           onClick={() => navigate('/home')}
           type="button"
         >
@@ -61,6 +61,7 @@ const AddReservation = () => {
                       </span>
                     </p>
                   </div>
+
                   <div className="my-1">
                     <p className="my-1 shadow p-3 mb-5 bg-body-tertiary text-center">
                       Select Tesla Model:
@@ -122,7 +123,7 @@ const AddReservation = () => {
                       </label>
                     </div>
                     <div className="my-2 text-center">
-                      <button className="btn btn-primary" type="submit">
+                      <button className="btn btn-dark" type="submit">
                         Reserve
                       </button>
                     </div>

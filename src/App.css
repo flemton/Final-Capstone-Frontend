@@ -2,9 +2,22 @@
   position: relative;
   height: 100vh;
   min-height: 450px;
-  background-image: url('../public/Tesla1.jpeg');
-  background-position: center center;
+}
+
+.background-container::before {
+  height: 100vh;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../public/Tesla-bg.jpg');
+  background-position: center top;
   background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(10px) opacity(0.2);
+  z-index: -1;
 }
 
 .tiny-font {
@@ -24,7 +37,7 @@
 }
 
 .sidebar-menu {
-  height: 100vh;
+  height: 100vh; /* Ojo */
   min-height: 450px;
   width: 15rem;
   background-color: #f5f5f5;
@@ -63,21 +76,24 @@
   background-color: #e5e5e5;
 }
 
+.sidebar-btn-container-show {
+  position: absolute;
+  right: -3.2rem;
+  bottom: 0;
+  z-index: 3;
+}
+
+.sidebar-btn-container-hidden {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
 .active {
   width: 85%;
   background-color: #e5e5e5 !important;
   font-weight: bold;
-}
-
-.burger-menu-header-model {
-  min-height: 500px;
-}
-
-.car-model {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .show {
@@ -86,6 +102,64 @@
 
 .hide {
   display: none !important;
+}
+
+.session-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../public/Tesla2.jpg');
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.session-box {
+  width: 90%;
+  max-width: 500px;
+  min-width: 300px;
+  min-height: 250px;
+  padding: 2rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 20px;
+}
+
+.card-model {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.card-model-img {
+  width: 18rem;
+  height: 18rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.swiper {
+  width: 80vw;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 34%;
+}
+
+.swiper-button-prev::after {
+  color: black;
+  transform: translateX(-5px);
+}
+
+.swiper-button-next::after {
+  color: black;
+  transform: translateX(5px);
 }
 
 @media screen and (max-width: 767px) {
@@ -112,18 +186,53 @@
     text-align: start;
   }
 
-  .burger-menu-header-model {
-    height: 50vh;
-    min-height: 200px;
-    max-height: 300px;
-  }
-
-  .car-model {
-    width: 100%;
-    transform: translate(-50%, -50%);
-  }
-
   .car-details {
     display: none !important;
+  }
+
+  .card-model {
+    width: 100%;
+    padding: 4rem 1rem 2rem 1rem;
+  }
+
+  .card-model-img {
+    width: 16rem;
+    height: 16rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .swiper {
+    width: 95vw;
+  }
+
+  .form-label {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 950px) {
+  .card-model {
+    width: 100%;
+    padding: 4rem 1rem 2rem 1rem;
+  }
+
+  .swiper {
+    width: 70vw;
+    min-width: 748px;
+    max-width: 880px;
+  }
+}
+
+@media screen and (min-width: 951px) and (max-width: 1400px) {
+  .card-model-img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .swiper {
+    width: 75vw;
   }
 }
