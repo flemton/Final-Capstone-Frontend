@@ -21,60 +21,62 @@ const CarDetails = ({ car, onGoBack }) => {
         }}
       >
         <div className="car-details bg-white rounded-3 p-3 shadow-4-strong me-4">
-          <div className="text-end mt-2">
-            <h2 className="car-details-title mx-0 mt-2 ">{car.name}</h2>
-            <p className="tiny-font">
-              £
-              {car.finance_fee}
-              {' '}
-              deposit upon any Car
-            </p>
+          <div className="car-details-container">
+            <div className="text-end mt-2 car-details-info">
+              <h2 className="car-details-title mx-0 mt-2 ">{car.name}</h2>
+              <p className="tiny-font">
+                £
+                {car.finance_fee}
+                {' '}
+                deposit upon any Car
+              </p>
+            </div>
+
+            <table className="table table-striped tiny-font mt-3 mb-2 car-details-table">
+              <tbody>
+                <tr>
+                  <td>Finance Fee:</td>
+                  <td className="text-end">
+                    £
+                    {car.finance_fee}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Option to Purchase Fee:</td>
+                  <td className="text-end">
+                    £
+                    {car.option_to_purchase_fee}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Total Amount Payable:</td>
+                  <td className="text-end">
+                    £
+                    {car.total_amount_payable}
+                  </td>
+                </tr>
+                <tr>
+                  <td>Duration:</td>
+                  <td className="text-end">
+                    {car.duration}
+                    {' '}
+                    Months
+                  </td>
+                </tr>
+              </tbody>
+              <caption className="ms-3">
+                <span className="fw-bold m-0">5.29 APR</span>
+                &nbsp;Representative
+              </caption>
+            </table>
           </div>
 
-          <table className="table table-striped tiny-font mt-3 mb-2">
-            <tbody>
-              <tr>
-                <td>Finance Fee:</td>
-                <td className="text-end">
-                  £
-                  {car.finance_fee}
-                </td>
-              </tr>
-              <tr>
-                <td>Option to Purchase Fee:</td>
-                <td className="text-end">
-                  £
-                  {car.option_to_purchase_fee}
-                </td>
-              </tr>
-              <tr>
-                <td>Total Amount Payable:</td>
-                <td className="text-end">
-                  £
-                  {car.total_amount_payable}
-                </td>
-              </tr>
-              <tr>
-                <td>Duration:</td>
-                <td className="text-end">
-                  {car.duration}
-                  {' '}
-                  Months
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p>
-            <span className="fw-bold m-0">5.29 APR</span>
-            &nbsp;Representative
-          </p>
-
-          <div className="text-center mx-3 my-4">
-            <p className="fw-bold tiny-font">
+          <div className="text-center mx-3 my-4 rosetta">
+            <p className="fw-bold tiny-font rosetta">
               Discover more models&nbsp;
               <span>&#62;</span>
             </p>
-            <img src={colorRosetta} alt="Example" />
+            <img src={colorRosetta} alt="Example" className="rosetta" />
           </div>
 
           <div className="card-details-btn d-flex justify-content-between align-items-center w-75 m-auto">
