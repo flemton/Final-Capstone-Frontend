@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import colorRosetta from './color-rosetta.png';
+import Logo from '../Sidebar/Logo';
 
 const CarDetails = ({ car, onGoBack }) => {
   const navigate = useNavigate();
@@ -20,6 +21,11 @@ const CarDetails = ({ car, onGoBack }) => {
           backgroundPosition: 'center center',
         }}
       >
+        <div
+          className="position-absolute top-0 start-0 m-4 rosetta"
+        >
+          <Logo />
+        </div>
         <div className="car-details bg-white rounded-3 p-3 shadow-4-strong me-4">
           <div className="car-details-container">
             <div className="text-end mt-2 car-details-info">

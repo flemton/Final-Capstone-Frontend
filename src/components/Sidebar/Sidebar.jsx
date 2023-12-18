@@ -45,17 +45,29 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <button
-          type="button"
-          onClick={handleClick}
-          className={`btn btn-dark align-self-end my-3 ${sidebarVisible ? 'sidebar-btn-container-show' : 'sidebar-btn-container-hidden mx-3'}`}
-        >
-          {sidebarVisible ? (
-            <box-icon name="left-arrow" color="#fff" />
-          ) : (
-            <box-icon name="right-arrow" color="#fff" />
-          )}
-        </button>
+        <div>
+          <div
+            className={`position-absolute d-flex flex-column justify-content-between align-content-center pt-4 pb-3 w-100 ps-4 ${
+              sidebarVisible ? 'hide' : 'show'
+            }`}
+          >
+            <Logo />
+          </div>
+
+          <button
+            type="button"
+            onClick={handleClick}
+            className={`btn btn-dark align-self-end my-3 ${
+              sidebarVisible ? 'sidebar-btn-container-show' : 'sidebar-btn-container-hidden mx-3'
+            }`}
+          >
+            {sidebarVisible ? (
+              <box-icon name="left-arrow" color="#fff" />
+            ) : (
+              <box-icon name="right-arrow" color="#fff" />
+            )}
+          </button>
+        </div>
       </div>
     </>
   );
