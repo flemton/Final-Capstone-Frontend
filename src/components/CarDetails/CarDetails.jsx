@@ -85,22 +85,23 @@ const CarDetails = ({ car, onGoBack }) => {
             <img src={colorRosetta} alt="Example" className="rosetta" />
           </div>
 
-          <div className="card-details-btn d-flex justify-content-between align-items-center w-75 m-auto">
-            <button className="btn text-btn-white" onClick={() => onGoBack()} type="button">
-              {' '}
-              <box-icon name="undo" color="#fff" />
-            </button>
-            <p className="text-white fw-semibold mb-1">Configure</p>
+          <div className="text-center my-2">
             <button
-              className="btn text-white"
-              onClick={() => navigate(`/reserve/${car.id}`)}
+              className="btn btn-dark px-5 text-white"
               type="button"
+              onClick={() => navigate(`/reserve/${car.id}`)}
             >
-              {' '}
-              <box-icon name="right-arrow-circle" color="#fff" />
+              Reserve
             </button>
           </div>
         </div>
+        <button
+          className="btn btn-toolbar text-btn-white rounded-back-btn fs-5"
+          onClick={() => onGoBack()}
+          type="button"
+        >
+          &laquo;
+        </button>
       </div>
     </>
   );

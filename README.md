@@ -1,291 +1,203 @@
+<div align="center">
+
+![EED](front.png)
+
 <a name="readme-top"></a>
 
-<!--
-!!! IMPORTANT !!!
-This README is an example of how you could professionally present your codebase. 
-Writing documentation is a crucial part of your work as a professional software developer and cannot be ignored. 
-
-You should modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
-
-For more information on the importance of a professional README for your repositories: https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/articles/readme_best_practices.md
--->
-
-<div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-<h3><b>Microverse README Template</b></h3>
+  <h1><b>Tesla Test Drive</b></h1>
 
 </div>
 
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-    - [🛠 Built With](#built-with)
-        - [Tech Stack](#tech-stack)
-        - [Key Features](#key-features)
-    - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Run tests](#run-tests)
-    - [Deployment](#deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Final Capstone Front End ](#-final-capstone-front-end-)
+    - [🛠 ER Diagram ](#-er-diagram-)
+    - [💻 Link to Demo ](#-link-to-demo-)
+    - [💻 Link to Back End ](#-link-to-back-end-)
+    - [💻 link to Kanban board information ](#-link-to-kanban-board-information-)
+    - [🛠 Built With ](#-built-with-)
+        - [Tech Stack ](#tech-stack-)
+        - [Key Features ](#key-features-)
+    - [💻 Getting Started ](#-getting-started-)
+        - [Prerequisites](#prerequisites)
+        - [Setup](#setup)
+        - [Install](#install)
+        - [Usage](#usage)
+        - [Run tests](#run-tests)
+    - [👥 Authors ](#-authors-)
+    - [🔭 Future Features ](#-future-features-)
+    - [🤝 Contributing ](#-contributing-)
+    - [⭐️ Show your support ](#️-show-your-support-)
+    - [🙏 Acknowledgments ](#-acknowledgments-)
+    - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
+    - [📝 License ](#-license-)
+# 📖 Tesla Test Drive Front End <a name="about-project"></a>
 
-<!-- PROJECT DESCRIPTION -->
+**Tesla Test Drive Front End** The front-end component of this final capstone project is developed using React.js, designed to provide an intuitive user interface for managing reservations or appointments for test drives of teslas. It communicates with the back-end API built with Ruby on Rails.
 
-# 📖 [your_project_name] <a name="about-project"></a>
+## 🛠 ER Diagram <a name="er-diagram"></a>
 
-> Describe your project in 1 or 2 sentences.
+![ER Diagram](ERD.png)
 
-**[your_project__name]** is a...
+<p align="right"\><a href="#readme-top"\>back to top</a></p>
+
+## 💻 Link to Demo <a name="link-to-demo"></a>
+
+[Link to Demo]()
+
+## 💻 Link to Back End <a name="link-to-back-end"></a>
+
+[Link to Back End API](https://github.com/flemton/Final-Capstone-Backend)
+
+<p align="right"\><a href="#readme-top"\>back to top</a></p>
+
+## 💻 link to Kanban board <a name="built-with"></a>
+
+[Link to Kanban Board](https://github.com/users/flemton/projects/3)
+
+This project was completed by three Team members:
+
+- Alhassan Osman
+- Sergio Andres Usma
+- Gueleu Farida
+
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
-  <summary>Client</summary>
+  <summary>Technologies</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
   </ul>
 </details>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-
-<!-- Features -->
-
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+- [x] **API communication with Backend**
+- [x] **Login and Register users**
+- [x] **Responsive Design**
+- [x] **Create and modify Teslas and reservations**
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://google.com)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
+<p align="right"\><a href="#readme-top"\>back to top</a></p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+Before you begin, make sure you have the following prerequisites installed on your system:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- Node.js: You need Node.js to run the React.js application.
+- npm: npm is used to manage packages in your React project.
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
+sh <br>
+cd my-folder <br>
+git clone https://github.com/flemton/Final-Capstone-Frontend.git
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
-```
---->
+- npm install
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
+npm start
 
-```sh
-  rails server
+### Run tests <a name="tests"></a>
+To run the frontend tests, follow these steps:
+
+### Prerequisites
+
+Before running the tests, ensure you have the following installed:
+
+- Node.js: You need Node.js to execute the test scripts.
+- npm: npm is used to manage packages in your React project.
+
+### Running Tests
+
+Execute the following command to run the tests:
+
+```bash
+npm test
 ```
---->
+This command will run the test suites and provide you with the test results and coverage information.
 
-### Run tests
 
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **Alhassan (Newton) Osman**
 
-👤 **Author1**
+- GitHub: [@flemton](https://github.com/flemton)
+- LinkedIn: [@newtongh](https://www.linkedin.com/in/newtongh/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Gueleu Farida**
 
-👤 **Author2**
+- GitHub: [@SFarida](https://github.com/SFarida)
+- LinkedIn: [Gueleu Farida](https://www.linkedin.com/in/SFarida/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Sergio Andres Usma**
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- GitHub: [@sergio-usma](https://github.com/sergio-usma)
+- LinkedIn: [sergio-usma](https://www.linkedin.com/in/sergio-usma/)
 
-<!-- FUTURE FEATURES -->
+<p align="right"\><a href="#readme-top"\>back to top</a></p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
+- [ ] **User Authentication and Authorization**
+- [ ] **Integration with External calendars for reminders**
+- [ ] **User Profile Management**
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
+<p align="right"\><a href="#readme-top"\>back to top</a></p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/flemton/Final-Capstone-Frontend/issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
+<p align="right"\><a href="#readme-top"\>back to top</a></p>
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
+If you find this project helpful, feel free to contribute or give it a star. Your support is appreciated!
 
-If you like this project...
+<p align="right"\><a href="#readme-top"\>back to top</a></p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## 🙏 Acknowledgments <a name="acknowledgments"></a>
 
-<!-- ACKNOWLEDGEMENTS -->
+- We would like to thank Murat Korkmaz for the [original design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) and Microverse for providing the opportunity to learn and implement this in a group, this helped us overcome so many challenges and also helped us grow.
 
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
+<p align="right"\><a href="#readme-top"\>back to top</a></p>
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+- **Can I use your project as a template for my own project?**
 
-- **[Question_1]**
+    - Certainly, feel free to use this project as a template for your own work.
 
-    - [Answer_1]
+- **Is your project licensed?**
 
-- **[Question_2]**
+    - Yes, this project is open-source and available under the MIT License. You can find more details about the license [here](MIT.md).
 
-    - [Answer_2]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
+<p align="right"\><a href="#readme-top"\>back to top</a></p>
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
 
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"\><a href="#readme-top"\>back to top</a></p>

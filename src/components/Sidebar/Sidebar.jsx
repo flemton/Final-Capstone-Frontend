@@ -35,7 +35,9 @@ const Sidebar = () => {
               <NavLink to="/addcar" activeclassname="active">
                 ADD CARS
               </NavLink>
-              <button type="button">DELETE CAR</button>
+              <NavLink to="/delete-car" activeclassname="active">
+                DELETE CAR
+              </NavLink>
             </div>
           </div>
 

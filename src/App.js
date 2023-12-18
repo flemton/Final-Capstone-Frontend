@@ -8,6 +8,7 @@ import Register from './components/Session/Register';
 import AddReservation from './pages/AddReservation/AddReservation';
 import Session from './components/Session/Session';
 import CarDetails from './components/CarDetails/CarDetails';
+import DeleteCar from './components/DeleteCar/DeleteCar';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
         <Route path="/addcar" element={<AddCar />} />
         <Route path="/user_reservations" element={<ReservationList />} />
         <Route path="/reserve" element={<AddReservation />} />
+        <Route path="/reserve/:id" element={<AddReservation />} />
         <Route path="/car-details" element={<CarDetails />} />
+        <Route path="/delete-car" element={<DeleteCar />} />
       </Routes>
     </Router>
   );
