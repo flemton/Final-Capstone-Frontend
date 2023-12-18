@@ -14,8 +14,12 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="sidebar d-flex vh-100">
-        <div className={`sidebar-menu d-flex flex-column justify-content-between align-content-center py-4 bg-white ${sidebarVisible ? 'show' : 'hide'}`}>
+      <div className="sidebar d-flex vh-100 position-relative">
+        <div
+          className={`sidebar-menu d-flex flex-column justify-content-between align-content-center py-4 bg-white ${
+            sidebarVisible ? 'show' : 'hide'
+          }`}
+        >
           <div className="d-flex flex-column justify-content-between align-items-center gap-5">
             <Logo />
             <div className="sidebar-menu-ul d-flex flex-column align-self-end">
@@ -41,8 +45,16 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <button type="button" onClick={handleClick} className={`sidebar-btn btn btn-dark align-self-end my-3 ${sidebarVisible ? 'mx-0' : 'mx-3'}`}>
-          {sidebarVisible ? <box-icon name="left-arrow" color="#fff" /> : <box-icon name="right-arrow" color="#fff" />}
+        <button
+          type="button"
+          onClick={handleClick}
+          className={`btn btn-dark align-self-end my-3 ${sidebarVisible ? 'mx-0' : 'mx-3'}`}
+        >
+          {sidebarVisible ? (
+            <box-icon name="left-arrow" color="#fff" />
+          ) : (
+            <box-icon name="right-arrow" color="#fff" />
+          )}
         </button>
       </div>
     </>
