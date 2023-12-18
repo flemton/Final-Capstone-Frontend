@@ -6,7 +6,7 @@ const createUserReservation = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     const { reservationData, selectedCar } = data;
     try {
-      const response = await fetch(`${apiUrl}tesla_models/${selectedCar}/reservations`, {
+      const response = await fetch(`${apiUrl}tesla_models/${selectedCar.id}/reservations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
