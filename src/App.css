@@ -136,6 +136,7 @@
   width: 100%;
   margin: auto;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .card-model-img {
@@ -156,12 +157,12 @@
 
 .swiper-button-prev::after {
   color: black;
-  content: '◀';
+  transform: translateX(-5px);
 }
 
 .swiper-button-next::after {
   color: black;
-  content: '▶';
+  transform: translateX(5px);
 }
 
 @media screen and (max-width: 767px) {
