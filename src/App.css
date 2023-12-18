@@ -239,7 +239,6 @@
     position: absolute;
     top: 20%;
     left: calc(50% - 150px);
-
     width: 300px;
     text-align: center !important;
   }
