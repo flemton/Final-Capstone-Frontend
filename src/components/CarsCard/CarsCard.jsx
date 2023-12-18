@@ -29,7 +29,7 @@ const CarsCard = ({ cars }) => {
     1400: {
       slidesPerView: 3,
     },
-    1600: {
+    2100: {
       slidesPerView: 4,
     },
   };
