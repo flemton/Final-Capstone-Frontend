@@ -6,7 +6,8 @@
 
 .background-container::before {
   height: 100vh;
-  content: "";
+  min-height: 450px;
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -42,6 +43,7 @@
   width: 15rem;
   background-color: #f5f5f5;
   box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
+  z-index: 300;
 }
 
 .sidebar-menu-ul {
@@ -162,6 +164,33 @@
   transform: translateX(5px);
 }
 
+.car-details-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.car-details {
+  width: fit-content;
+  max-width: 300px;
+}
+
+.car-details-title {
+  line-height: 2rem;
+}
+
+.card-details-btn {
+  border-radius: 50px;
+  background-color: black;
+}
+
 @media screen and (max-width: 767px) {
   .burger-menu {
     display: flex !important;
@@ -186,8 +215,55 @@
     text-align: start;
   }
 
+  .car-details-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .car-details-container {
+    display: flex;
+    gap: 5%;
+  }
+
   .car-details {
-    display: none !important;
+    min-width: 320px !important;
+    width: 80%;
+    max-width: 580px;
+    margin: 1rem 0 4.5rem 0 !important;
+    padding: 1rem 1rem 0.5rem 1rem !important;
+  }
+
+  .car-details-info {
+    position: absolute;
+    top: 20%;
+    left: calc(50% - 150px);
+    width: 300px;
+    text-align: center !important;
+  }
+
+  .car-details-info h2 {
+    transform: scale(1.4);
+  }
+
+  .car-details-info p {
+    transform: scale(1.1);
+  }
+
+  .car-details-table {
+    margin: 0 !important;
+  }
+
+  .card-details-btn {
+    position: absolute;
+    bottom: 1rem;
+    left: calc(50% - 160px);
+    width: 320px !important;
+  }
+
+  .rosetta {
+    display: none;
   }
 
   .card-model {
