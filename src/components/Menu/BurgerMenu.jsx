@@ -15,22 +15,20 @@ const BurgerMenu = () => {
     <>
       <div className="burger-menu position-absolute top-0 w-100 d-flex flex-row-reverse justify-content-between align-items-start gap-5 z-2">
         <div className="burger-menu-header d-flex justify-content-between align-items-start w-100">
-
           <div
             className={`d-flex flex-column justify-content-between align-content-center pt-4 pb-3 w-100 ps-4 ${
               sidebarVisible ? 'hide' : 'show'
             }`}
           >
             <Logo />
-
           </div>
 
-          <button
-            type="button"
-            onClick={handleClick}
-            className="btn btn-dark mt-3 mx-3"
-          >
-            {sidebarVisible ? <box-icon name="arrow-back" color="#fff" /> : <box-icon name="menu" color="#fff" />}
+          <button type="button" onClick={handleClick} className="btn btn-dark mt-3 mx-3">
+            {sidebarVisible ? (
+              <box-icon name="arrow-back" color="#fff" />
+            ) : (
+              <box-icon name="menu" color="#fff" />
+            )}
           </button>
 
           <div
@@ -41,7 +39,11 @@ const BurgerMenu = () => {
             <div className="d-flex flex-column justify-content-between align-items-center gap-4">
               <Logo />
               <div className="sidebar-menu-ul d-flex flex-column align-self-start my-3">
-                <NavLink to="/home" className="sidebar-menu-navlink text-end" activeclassname="active">
+                <NavLink
+                  to="/home"
+                  className="sidebar-menu-navlink text-end"
+                  activeclassname="active"
+                >
                   HOME
                 </NavLink>
                 <NavLink
@@ -65,9 +67,13 @@ const BurgerMenu = () => {
                 >
                   ADD CARS
                 </NavLink>
-                <button type="button" className="sidebar-menu-navlink text-end">
+                <NavLink
+                  to="/delete-car"
+                  className="sidebar-menu-navlink text-end"
+                  activeclassname="active"
+                >
                   DELETE CAR
-                </button>
+                </NavLink>
               </div>
             </div>
             <div>

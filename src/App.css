@@ -204,6 +204,10 @@
   padding: 1.2rem;
 }
 
+.tesla-logo-mobile {
+  display: none !important;
+}
+
 @media screen and (max-width: 767px) {
   .burger-menu {
     display: flex !important;
@@ -297,6 +301,10 @@
 
   .form-label {
     width: 100%;
+  }
+
+  .tesla-logo-mobile {
+    display: block;
   }
 }
 

@@ -49,7 +49,7 @@ const Sidebar = () => {
 
         <div>
           <div
-            className={`position-absolute d-flex flex-column justify-content-between align-content-center pt-4 pb-3 w-100 ps-4 ${
+            className={`tesla-logo-mobile position-absolute d-flex flex-column justify-content-between align-content-center pt-4 pb-3 w-100 ps-4 ${
               sidebarVisible ? 'hide' : 'show'
             }`}
           >
