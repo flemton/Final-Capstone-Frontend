@@ -215,11 +215,6 @@
     padding: 4rem 1rem 2rem 1rem;
   }
 
-  .card-model-img {
-    width: 10rem;
-    height: 10rem;
-  }
-
   .swiper {
     width: 70vw;
     min-width: 748px;

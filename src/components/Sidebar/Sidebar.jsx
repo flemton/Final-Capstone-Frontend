@@ -48,7 +48,7 @@ const Sidebar = () => {
         <button
           type="button"
           onClick={handleClick}
-          className={`btn btn-dark align-self-end my-3 ${sidebarVisible ? 'mx-0' : 'mx-3'}`}
+          className={`btn btn-dark align-self-end my-3 ${sidebarVisible ? 'sidebar-btn-container-show' : 'sidebar-btn-container-hidden mx-3'}`}
         >
           {sidebarVisible ? (
             <box-icon name="left-arrow" color="#fff" />
