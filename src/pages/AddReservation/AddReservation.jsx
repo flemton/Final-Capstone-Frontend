@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import getUser from '../../redux/requests/getUser';
 import createUserReservation from '../../redux/requests/createUserReservation';
@@ -14,6 +14,7 @@ const AddReservation = () => {
   const [endTime, setEndTime] = useState('');
   const [city, setCity] = useState('');
   const [selectedCar, setSelectedCar] = useState('');
+  const { id } = useParams();
 
   const handleReservation = async (e) => {
     e.preventDefault();
@@ -26,6 +27,20 @@ const AddReservation = () => {
     dispatch(createUserReservation({ reservationData, selectedCar }));
     navigate('/home');
   };
+
+  useEffect(() => {
+    const fetchData = () => {
+      try {
+        const selectedIdCar = cars.find((elt) => parseInt(elt.id, 10) === parseInt(id, 10));
+        setSelectedCar(selectedIdCar);
+      } catch (error) {
+        setSelectedCar('');
+      }
+    };
+    if (id && (!selectedCar || id !== selectedCar.id)) {
+      fetchData();
+    }
+  }, [id, selectedCar]);
 
   useEffect(() => {
     if (!currentUser) {
@@ -69,7 +84,7 @@ const AddReservation = () => {
                         {cars ? (
                           <select
                             id="car_selection"
-                            value={selectedCar}
+                            value={selectedCar ? selectedCar.id : ''}
                             onChange={(e) => setSelectedCar(e.target.value)}
                             required
                           >
