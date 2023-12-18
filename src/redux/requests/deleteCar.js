@@ -3,7 +3,7 @@ import apiUrl from '../../misc/apiUrl';
 
 const deleteCar = createAsyncThunk('car/delete', async (carId, { rejectWithValue }) => {
   try {
-    const response = await fetch(`${apiUrl}cars/${carId}`, {
+    const response = await fetch(`${apiUrl}tesla_models/${carId}`, {
       method: 'DELETE',
     });
     if (!response.ok) {
