@@ -18,13 +18,19 @@ const CarsCard = ({ cars }) => {
 
   const breakpoints = {
     768: {
-      slidesPerView: 2,
+      slidesPerView: 1,
     },
     1024: {
       slidesPerView: 2,
     },
     1200: {
       slidesPerView: 3,
+    },
+    1400: {
+      slidesPerView: 3,
+    },
+    1600: {
+      slidesPerView: 4,
     },
   };
 
