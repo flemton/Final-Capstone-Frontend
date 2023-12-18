@@ -5,6 +5,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Session from '../Session/Session';
 import getCars from '../../redux/requests/getCars';
 import CarsCard from '../CarsCard/CarsCard';
+import BurgerMenu from '../Menu/BurgerMenu';
 
 const DeleteCar = () => {
   const user = useSelector((state) => state.login.data);
@@ -26,6 +27,7 @@ const DeleteCar = () => {
     <div className="d-flex justify-content-between align-items-center background-container">
       <div>
         <Sidebar />
+        <BurgerMenu />
       </div>
 
       <CarsCard cars={cars} onCarClick={handleCarClick} delete />
