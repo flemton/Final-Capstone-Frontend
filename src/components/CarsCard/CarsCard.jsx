@@ -48,7 +48,11 @@ const CarsCard = ({ cars, delete: isDeleteMode }) => {
     <div className="card-model ">
       {!selectedCar && (
         <div className="d-flex flex-column align-items-center mb-5">
-          <h1 className="text-center font-weight-bold">Latest Models</h1>
+          {isDeleteMode ? (
+            <h1 className="text-center font-weight-bold">Delete a Model</h1>
+          ) : (
+            <h1 className="text-center font-weight-bold">Latest Models</h1>
+          )}
           <p className="text-wrap text-muted text-center px-5">
             Order online and schedule a&nbsp;
             <span className="text-decoration-underline">Test Drive</span>
