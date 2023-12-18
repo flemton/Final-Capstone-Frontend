@@ -1,6 +1,6 @@
 <div align="center">
 
-![EED](front.png)
+![EED](front.jpeg)
 
 <a name="readme-top"></a>
 
@@ -38,7 +38,7 @@
 
 ## 🛠 ER Diagram <a name="er-diagram"></a>
 
-![ER Diagram](ERD.png)
+![ER Diagram](ERD.jpeg)
 
 <p align="right"\><a href="#readme-top"\>back to top</a></p>
 
