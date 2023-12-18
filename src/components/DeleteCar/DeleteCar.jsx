@@ -28,7 +28,7 @@ const DeleteCar = () => {
         <Sidebar />
       </div>
 
-      <CarsCard cars={cars} onCarClick={handleCarClick} />
+      <CarsCard cars={cars} onCarClick={handleCarClick} delete />
     </div>
   );
 };
