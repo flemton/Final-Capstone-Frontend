@@ -78,6 +78,10 @@
   background-color: #e5e5e5;
 }
 
+.sidebar-menu-ul a:last-child:hover {
+  background-color: #ffe5e5;
+}
+
 .sidebar-btn-container-show {
   position: absolute;
   right: -3.2rem;
