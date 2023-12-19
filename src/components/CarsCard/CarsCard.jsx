@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import CarDetails from '../CarDetails/CarDetails';
 import deleteCar from '../../redux/requests/deleteCar';
+import Logo from '../Sidebar/Logo';
 
 const CarsCard = ({ cars, delete: isDeleteMode }) => {
   const dispatch = useDispatch();
@@ -46,6 +47,9 @@ const CarsCard = ({ cars, delete: isDeleteMode }) => {
 
   return (
     <div className="card-model ">
+      <div className="position-absolute top-0 start-0 m-4 rosetta">
+        <Logo />
+      </div>
       {!selectedCar && (
         <div className="d-flex flex-column align-items-center mb-5">
           {isDeleteMode ? (

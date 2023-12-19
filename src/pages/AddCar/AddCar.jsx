@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import createCar from '../../redux/requests/createCar';
+import Logo from '../../components/Sidebar/Logo';
 
 const AddCar = () => {
   const navigate = useNavigate();
@@ -41,16 +42,21 @@ const AddCar = () => {
         <Sidebar />
       </div>
 
-      <div className="w-100 vh-100 mx-3 py-3">
+      <div className="pages-layout">
         <button
-          className="border-1 btn m-2 btn btn-outline-dark"
+          className="btn btn-outline-dark align-self-end"
           onClick={() => navigate('/home')}
           type="button"
         >
           Back
         </button>
 
+        <div className="position-absolute start-0 pt-2 pb-3 w-50 ps-4">
+          <Logo />
+        </div>
+
         <div className="container mx-auto my-5">
+          <h1 className="text-center font-weight-bold mb-4">Add Car</h1>
           <form
             onSubmit={handleSubmit}
             className="d-flex flex-column justify-content-center align-items-center"
@@ -187,7 +193,7 @@ const AddCar = () => {
 
             <div className="row d-flex justify-content-center">
               <div className="col-md text-center">
-                <button className="btn btn-dark px-5 mx-5 text-white" type="submit">
+                <button className="btn btn-dark px-5 mx-5 mb-3 text-white" type="submit">
                   Submit
                 </button>
               </div>
