@@ -12,6 +12,11 @@ const Sidebar = () => {
     setSidebarVisible(!sidebarVisible);
   };
 
+  const logout = () => {
+    localStorage.removeItem('token');
+    window.location.href = '/';
+  };
+
   return (
     <>
       <div className="sidebar d-flex vh-100 position-relative">
@@ -37,6 +42,9 @@ const Sidebar = () => {
               </NavLink>
               <NavLink to="/delete-car" activeclassname="active">
                 DELETE CAR
+              </NavLink>
+              <NavLink to="/" onClick={logout} activeclassname="active">
+                LOGOUT
               </NavLink>
             </div>
           </div>

@@ -59,7 +59,7 @@ const CarsCard = ({ cars, delete: isDeleteMode }) => {
           )}
           <p className="text-wrap text-muted text-center px-5">
             Order online and schedule a&nbsp;
-            <span className="text-decoration-underline">Test Drive</span>
+            <a className="text-decoration-underline text-black" href="/reserve">Test Drive</a>
           </p>
         </div>
       )}

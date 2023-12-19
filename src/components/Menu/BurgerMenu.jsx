@@ -11,6 +11,12 @@ const BurgerMenu = () => {
   const handleClick = () => {
     setSidebarVisible(!sidebarVisible);
   };
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    window.location.href = '/';
+  };
+
   return (
     <>
       <div className="burger-menu position-absolute top-0 w-100 d-flex flex-row-reverse justify-content-between align-items-start gap-5 z-2">
@@ -73,6 +79,14 @@ const BurgerMenu = () => {
                   activeclassname="active"
                 >
                   DELETE CAR
+                </NavLink>
+                <NavLink
+                  to="/"
+                  onClick={logout}
+                  className="sidebar-menu-navlink text-end"
+                  activeclassname="active"
+                >
+                  LOGOUT
                 </NavLink>
               </div>
             </div>

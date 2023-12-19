@@ -90,7 +90,7 @@ const CarDetails = ({ car, onGoBack }) => {
               {' '}
               <box-icon name="undo" color="#fff" />
             </button>
-            <p className="text-white fw-semibold mb-1">Configure</p>
+            <p className="text-white fw-semibold mb-1">Reserve</p>
             <button
               className="btn text-white"
               onClick={() => navigate(`/reserve/${car.id}`)}

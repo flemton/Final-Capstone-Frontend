@@ -16,23 +16,39 @@ const AddReservation = () => {
   const [city, setCity] = useState('');
   const [selectedCar, setSelectedCar] = useState('');
   const { id } = useParams();
+  const [formValid, setFormValid] = useState(false);
+
+  const checkFormValidity = () => {
+    const isValid = startTime && endTime && city && selectedCar;
+    setFormValid(isValid);
+  };
 
   const handleReservation = async (e) => {
     e.preventDefault();
-    const reservationData = {
-      start_date: startTime,
-      end_date: endTime,
-      city,
-      user_id: currentUser.id,
-    };
-    dispatch(createUserReservation({ reservationData, selectedCar }));
-    navigate('/home');
+    if (formValid) {
+      const reservationData = {
+        start_date: startTime,
+        end_date: endTime,
+        city,
+        user_id: currentUser.id,
+      };
+      dispatch(createUserReservation({ reservationData, selectedCar }));
+      navigate('/home');
+    } else {
+      alert('Please fill in all the required fields');
+    }
   };
+
+  useEffect(() => {
+    checkFormValidity();
+  }, [startTime, endTime, city, selectedCar]);
 
   useEffect(() => {
     const fetchData = () => {
       try {
-        const selectedIdCar = cars.find((elt) => parseInt(elt.id, 10) === parseInt(id, 10));
+        const selectedIdCar = cars.find(
+          (elt) => parseInt(elt.id, 10) === parseInt(id, 10),
+        );
         setSelectedCar(selectedIdCar);
       } catch (error) {
         setSelectedCar('');
@@ -63,10 +79,7 @@ const AddReservation = () => {
         >
           Back
         </button>
-
-        <div
-          className="position-absolute start-0 pt-2 pb-3 w-50 ps-4"
-        >
+        <div className="position-absolute start-0 pt-2 pb-3 w-50 ps-4">
           <Logo />
         </div>
 
@@ -77,7 +90,9 @@ const AddReservation = () => {
                 <h1 className="text-center font-weight-bold">Reserve Model</h1>
                 <p className="my-1 shadow p-3 mb-5 bg-body-tertiary text-center">
                   Current User:
-                  <span className="px-2">{currentUser ? currentUser.username : 'Loading...'}</span>
+                  <span className="px-2">
+                    {currentUser ? currentUser.username : 'Loading...'}
+                  </span>
                 </p>
               </div>
 
@@ -114,6 +129,7 @@ const AddReservation = () => {
                       value={startTime}
                       onChange={(e) => setStartTime(e.target.value)}
                       required
+                      onInvalid={() => alert('Please fill in the Start Time field')}
                     />
                   </label>
                 </div>
@@ -126,6 +142,7 @@ const AddReservation = () => {
                       value={endTime}
                       onChange={(e) => setEndTime(e.target.value)}
                       required
+                      onInvalid={() => alert('Please fill in the End Time field')}
                     />
                   </label>
                 </div>
@@ -138,12 +155,13 @@ const AddReservation = () => {
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
                       required
+                      onInvalid={() => alert('Please fill in the City field')}
                     />
                   </label>
                 </div>
 
                 <div className="my-4 text-center">
-                  <button className="btn btn-dark" type="submit">
+                  <button className="btn btn-dark" type="submit" disabled={!formValid}>
                     Reserve
                   </button>
                 </div>
