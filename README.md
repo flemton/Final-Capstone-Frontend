@@ -115,26 +115,6 @@ To run the project, execute the following command:
 
 npm start
 
-### Run tests <a name="tests"></a>
-To run the frontend tests, follow these steps:
-
-### Prerequisites
-
-Before running the tests, ensure you have the following installed:
-
-- Node.js: You need Node.js to execute the test scripts.
-- npm: npm is used to manage packages in your React project.
-
-### Running Tests
-
-Execute the following command to run the tests:
-
-```bash
-npm test
-```
-This command will run the test suites and provide you with the test results and coverage information.
-
-
 <p align="right"><a href="#readme-top">back to top</a></p>
 
 ## 👥 Authors <a name="authors"></a>
