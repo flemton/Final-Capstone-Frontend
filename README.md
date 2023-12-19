@@ -98,21 +98,24 @@ Before you begin, make sure you have the following prerequisites installed on yo
 
 Clone this repository to your desired folder:
 
-sh <br>
-cd my-folder <br>
-git clone https://github.com/flemton/Final-Capstone-Frontend.git
+```sh
+  cd my-folder
+  git clone https://github.com/flemton/Final-Capstone-Frontend.git
+```
 
 ### Install
 
 Install this project with:
-
-- npm install
+```
+  npm install
+```
 
 ### Usage
 
 To run the project, execute the following command:
-
-npm start
+```
+  npm start
+```
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
