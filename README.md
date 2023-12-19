@@ -24,7 +24,6 @@
         - [Setup](#setup)
         - [Install](#install)
         - [Usage](#usage)
-        - [Run tests](#run-tests)
     - [👥 Authors ](#-authors-)
     - [🔭 Future Features ](#-future-features-)
     - [🤝 Contributing ](#-contributing-)
